@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ieee/Features/auth/ui/widgets/custom_button_google.dart';
 import 'package:ieee/Features/auth/ui/widgets/custom_password.dart';
 import 'package:ieee/Features/auth/ui/widgets/custom_textfield.dart';
 import 'package:ieee/Features/auth/ui/widgets/primary_button.dart';
 import 'package:ieee/Features/cubits/auth_cubit/auth_cubit.dart';
 import 'package:ieee/Features/cubits/auth_cubit/auth_state.dart';
+import 'package:ieee/core/constant/app_color.dart';
 import 'package:ieee/core/helpers/validator.dart';
 import 'package:ieee/core/routes/app_route_named.dart';
 
@@ -129,6 +131,70 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
+                     SizedBox(height: 20),
+
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Divider(
+                              color: AppColor.babyred,
+                              thickness: 0.5,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            child: Text(
+                              "OR CONTINUE WITH",
+                              style: TextStyle(
+                                color: AppColor.grey,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Divider(
+                              color: AppColor.babyred,
+                              thickness: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                       CustomButtonGoogle(text: 'Google', onPressed: () {}),
+                          Padding(
+                        padding: const EdgeInsets.all(8.0),
+                       
+                      ),
+                      SizedBox(height:20),
+                      Row(
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            " Already have an account? ",
+                            style: TextStyle(
+                              color: AppColor.brown,
+                              fontSize: 16,
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutesNamed.login_screen,
+                              );
+                            },
+                            child: Text(
+                              "Log In ",
+                              style: TextStyle(
+                                color: AppColor.red,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
             ],
           ),
         ),

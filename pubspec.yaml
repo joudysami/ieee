@@ -41,6 +41,10 @@ dependencies:
   provider: ^6.1.5+1
   flutter_bloc: ^9.1.1
   dio: ^5.9.2
+  animate_do: ^5.1.0
+  timeago: ^3.7.1
+  shared_preferences: ^2.5.5
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:

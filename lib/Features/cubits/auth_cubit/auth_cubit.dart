@@ -1,8 +1,10 @@
 import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ieee/Features/auth/repo/auth_repo.dart';
 import 'package:ieee/Features/auth/repo/auth_repo_imple.dart';
 import 'package:ieee/Features/cubits/auth_cubit/auth_state.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
@@ -34,5 +36,15 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthFailure(error: e.toString()));
       log("AuthCubit.register error: $e");
     }
+  }
+}
+
+class UserCubit extends Cubit<String> {
+  UserCubit() : super("");
+
+  Future<void> loadUserName() async {
+    final prefs = await SharedPreferences.getInstance();
+    final name = prefs.getString("username") ?? "No username";
+    emit(name);
   }
 }

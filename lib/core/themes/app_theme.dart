@@ -31,6 +31,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
+    iconTheme: IconThemeData(color: AppColor.red),
     brightness: Brightness.dark,
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: AppColor.babygrey,

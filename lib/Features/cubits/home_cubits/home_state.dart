@@ -1,6 +1,5 @@
 
 import 'package:ieee/core/models/aritcles/aritcles.dart';
-
 import 'package:ieee/core/state/state.dart';
 
 class HomeState {
